@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Redux basic example</title>
+  <!-- REDUX CDN -->
+  <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
+</head>
+
+<body>
+
+  <div>
+    <p>
+      Clicked: <span id="value">0</span> times
+      <button id="increment">+</button>
+      <button id="decrement">-</button>
+      <button id="incrementIfOdd">Increment if odd</button>
+      <button id="incrementAsync">Increment async</button>
+    </p>
+  </div>
+
+
+
+  <script>
+    // counter is our reducer, this is the function that will actually update our globally accessible state
+    // it will take in the current state, and an action (which is simply an object with a type and optionally a payload)
+    function counter(state, action) {
+      
+      // here we establish our "initial state", setting it to zero
+      // note: state will almost always be an object but for simplicity of this example it is a number
+      if (typeof state === 'undefined') {
+        return 0
+      }
+
+      // we check the action type, in this case using a switch statement and return the updated state, in this case the current state (number) plus/minus one
+      switch (action.type) {
+        case 'INCREMENT':
+          return state + 1
+        case 'DECREMENT':
+          return state - 1
+        default:
+          return state
+      }
+    }
+    
+    // create the store where our global state will live.  We will only ever have one store in an application
+    // we pass the counter function to createStore as our singular "reducer"
+    // if we had multiple reducers, we could combine them and then pass that combinedReducer to createStore
+    var store = Redux.createStore(counter)
+
+
+    var valueEl = document.getElementById('value')
+    
+    function render() {
+      console.log(store);
+      // console.log(store.getState());
+      valueEl.innerHTML = store.getState().toString()
+    }
+
+    render() // call render initially
+
+    // here we "subscribe" passing in the render function, which eventually updates the DOM/view
+    // we can think of this something like: (onReduxStoreStateChange, () => callbackToHandleNewState)
+    store.subscribe(render)
+
+
+    // Listen for click events and then use store.dispatch() to send an action to the store
+    // Actions are payloads of information that send data from your application to your store. They are the only source of information for the store. We send them to the store using store.dispatch().
+    document.getElementById('increment').addEventListener('click', function () {
+      store.dispatch({ type: 'INCREMENT' })
+    })
+
+    document.getElementById('decrement').addEventListener('click', function () {
+      store.dispatch({ type: 'DECREMENT' })
+    })
+
+    document.getElementById('incrementIfOdd').addEventListener('click', function () {
+      if (store.getState() % 2 !== 0) {
+        store.dispatch({ type: 'INCREMENT' })
+      }
+    })
+
+    document.getElementById('incrementAsync').addEventListener('click', function () {
+      setTimeout(function () {
+        store.dispatch({ type: 'INCREMENT' })
+      }, 1000)
+    })
+
+
+    // ******************************** REVIEW ********************************
+    
+    // ACTIONS
+    // We define actions which are objects with a type and an optional payload
+    // We can also define functions which return these actions, which are called "action creators"
+
+    // DISPATCHING ACTIONS
+    // We use store.dispatch() passing in the action to send an action to our reducer
+
+    // REDUCER(s)
+    // Our "reducer" is a function which takes in the current state and an action object as parameters
+    // Depending on the action.type the reducer function will update state accordingly
+
+    // STORE 
+    // The store is where our state is held
+    // We can access it with .getState()
+    // We update is by using .dispatch() and passing in an action, which will go through our reducer
+    // We create a store by using .createStore() and passing in our singular reducer
+
+    // SUBSCRIBING - LISTENING FOR UPDATES
+    // We use store.subscribe() passing in the function which handles updates to listen for changes to the state which is held in our redux store
+    </script>
+</body>
+
+</html>
+
