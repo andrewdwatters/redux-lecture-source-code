@@ -13,4 +13,4 @@ Product.propTypes = {
   title: PropTypes.string
 }
 
-export default Product // listening for updates to state in our Redux Store
+export default Product // not listening for updates to state in our Redux Store

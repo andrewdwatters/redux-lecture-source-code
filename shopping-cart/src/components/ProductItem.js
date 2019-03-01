@@ -25,4 +25,4 @@ ProductItem.propTypes = {
   onAddToCartClicked: PropTypes.func.isRequired
 }
 
-export default ProductItem // listening for updates to state in our Redux Store
+export default ProductItem // not listening for updates to state in our Redux Store
