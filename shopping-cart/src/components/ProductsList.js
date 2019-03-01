@@ -13,4 +13,4 @@ ProductsList.propTypes = {
   title: PropTypes.string.isRequired
 }
 
-export default ProductsList
+export default ProductsList // listening for updates to state in our Redux Store

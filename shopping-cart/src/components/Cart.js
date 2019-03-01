@@ -36,4 +36,4 @@ Cart.propTypes = {
   onCheckoutClicked: PropTypes.func
 }
 
-export default Cart
+export default Cart // listening for updates to state in our Redux Store

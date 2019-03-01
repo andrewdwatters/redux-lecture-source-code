@@ -22,4 +22,4 @@ Link.propTypes = {
   onClick: PropTypes.func.isRequired
 }
 
-export default Link // this component is not wrapped in connect, so it does not listen for any updates from the redux store w/ subscribe()
+export default Link // this component is wrapped in Connect in FilterLink.js

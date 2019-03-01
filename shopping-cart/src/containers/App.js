@@ -12,4 +12,4 @@ const App = () => (
   </div>
 )
 
-export default App
+export default App // not subscribed to the redux store or listening for state changes via connect()

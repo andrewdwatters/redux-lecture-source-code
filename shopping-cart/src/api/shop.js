@@ -1,8 +1,8 @@
-/**
- * Mocking client-server processing
- */
+
+// mock data representing what we might get from our database or an API call
 import _products from './products.json'
 
+// mock a timeout to wait for results
 const TIMEOUT = 100
 
 export default {
