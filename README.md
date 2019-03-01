@@ -4,16 +4,16 @@
 
 This example does not require a build system or a view framework, and exists to show the raw Redux API used with ES5.
 
-  "The new Counter Vanilla example is aimed to dispel the myth that Redux requires Webpack, React, hot reloading, sagas, action creators, constants, Babel, npm, CSS modules, decorators, fluent Latin, an Egghead subscription, a PhD, or an Exceeds Expectations O.W.L. level. It's just HTML, some artisanal `<script>` tags, and plain old DOM manipulation. Enjoy!"
-    *[Dan Abramov](https://github.com/gaearon)
+  > The new Counter Vanilla example is aimed to dispel the myth that Redux requires Webpack, React, hot reloading, sagas, action creators, constants, Babel, npm, CSS modules, decorators, fluent Latin, an Egghead subscription, a PhD, or an Exceeds Expectations O.W.L. level. It's just HTML, some artisanal `<script>` tags, and plain old DOM manipulation. Enjoy!
+  >
 
+* [Dan Abramov](https://github.com/gaearon)
 
+____
 ### Redux Counter Example
 
 
-This is the most basic example of using Redux together with React. For simplicity, it re-renders the React component manually when the store changes. In real projects, you will likely want to use the highly performant React Redux bindings instead.
-
-
+This is the most basic example of using Redux together with React. For simplicity, it re-renders the React component manually when the store changes. In real projects, you will likely want to use the highly performant [React Redux](https://github.com/reduxjs/react-redux) bindings instead.
 
 
 ### Redux Todos with Undo Example
@@ -27,7 +27,7 @@ This example shows important idiomatic Redux patterns that become important as y
 
 
 
-
+____
 The Counter, Todos with Undo, and Shopping Cart examples were built with [Create React App](https://github.com/facebookincubator/create-react-app)
 
 Projects built with Create-React-App include support for ES6 syntax, as well as several unofficial / not-yet-final forms of Javascript syntax such as Class Properties and JSX. See the list of [language features and polyfills supported by Create-React-App](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#supported-language-features-and-polyfills) for more information.
