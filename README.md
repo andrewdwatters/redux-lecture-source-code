@@ -1,5 +1,8 @@
 # Redux-Lecture-Code-Along
 
+In this lecture, we will discuss Redux, a state container for JavaScript Applications.  Redux attempts to solve many of the problems that can come about due to React's [Unidirectional Data Flow](https://flaviocopes.com/react-unidirectional-data-flow/) model.  
+
+
 ### Redux Counter Vanilla Example
 
 This example does not require a build system or a view framework, and exists to show the raw Redux API used with ES5.
